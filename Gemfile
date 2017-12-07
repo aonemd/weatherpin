@@ -19,6 +19,8 @@ gem 'uglifier', '>= 1.3.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker'
 
+gem 'httpclient'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -35,6 +37,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', require: false
+end
+
+group :test do
+  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
