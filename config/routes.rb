@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   namespace :api, default: { format: :json } do
     namespace :v1 do
-      get 'current', to: 'weather#current'
-      get 'random', to: 'weather#random'
+      get 'current', to: 'current_weather#show'
+      get 'random', to: 'random_weather#show'
     end
   end
 
