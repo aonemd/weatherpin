@@ -1,15 +1,26 @@
 <%= content_tag :div, id: 'app' do %>
-  <h1>
-    {{temperature}}
-  </h1>
+  <div id="main-weather__label">
+    <div class="row" id="main-weather__label">
+      <div class="center">
+        <div class="col-12 text-center">
+          <h1>
+            {{temperature}}
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <label>City</label>
-  <input type="text" v-model="cityName">
-
-  <label>Country Code</label>
-  <input type="text" v-model="countryCode">
-
-  <button v-on:click="getWeather">Get Weather</button>
-
-  <button v-on:click="randomWeather">I'm Feeling Lucky!</button>
+  <div class="row">
+    <div class="center">
+      <div class="col-12 text-center">
+        <input type="text" placeholder="City" v-model="cityName">
+        <input type="text" placeholder="Country Code" v-model="countryCode">
+      </div>
+      <div class="col-12 text-center">
+        <button v-on:click="getWeather">Get Weather</button>
+        <button v-on:click="randomWeather">I'm Feeling Lucky!</button>
+      </div>
+    </div>
+  </div>
 <% end %>
