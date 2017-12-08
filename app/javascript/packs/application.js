@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     methods: {
       getWeather: function () {
-        this.$http.get('/current.json', { params: { city: this.cityName, country: this.countryCode } })
+        this.$http.get('/api/v1/current.json', { params: { city: this.cityName, country: this.countryCode } })
           .then(
             function(response) {
               this.temperature = response.data.temperature + "'C";
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
           )
       },
       randomWeather: function () {
-        this.$http.get('/random.json')
+        this.$http.get('/api/v1/random.json')
           .then(
             function(response) {
               this.temperature = response.data.temperature + "'C";
