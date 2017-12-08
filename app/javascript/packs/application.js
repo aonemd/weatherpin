@@ -43,7 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
           )
       },
       randomWeather: function () {
-        console.log('hello')
+        this.$http.get('/random.json')
+          .then(
+            function(response) {
+              this.temperature = response.data.temperature + "'C";
+            },
+            function(response) {
+              this.temperature = response.data.errors;
+            }
+          )
       }
     }
   })

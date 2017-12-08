@@ -16,4 +16,22 @@ class WeatherController < ApplicationController
       format.json { render json: json, status: owm_client.status }
     end
   end
+
+  def random
+    owm_client = OpenWeatherMap::Client::Current.new(appid: Rails.application.secrets.openweathermap)
+    latitude   = Random.rand(-90..90)   # -90:90
+    longitude  = Random.rand(-180..180) # -180:180
+    owm_client.geocode(lat: latitude, lon: longitude)
+
+    json = if owm_client.successful?
+             { temperature: owm_client.body.fetch('main').fetch('temp') }
+           else
+             { errors: owm_client.message }
+           end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: json, status: owm_client.status }
+    end
+  end
 end
