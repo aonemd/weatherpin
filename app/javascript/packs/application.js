@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var vm = new Vue({
     el: '#app',
     data: {
-      temperature: "Get Current Weather",
+      temperature: "Weatherpin",
       placeName: '',
       cityName: '',
       countryCode: ''
