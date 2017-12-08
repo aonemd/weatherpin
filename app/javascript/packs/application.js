@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
             function(response) {
               this.temperature = response.data.temperature + "'C";
               this.placeName   = response.data.place_name
+              this.cityName    = ''
+              this.countryCode = ''
             },
             function(response) {
               this.temperature = response.data.errors;
