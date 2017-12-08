@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
             function(response) {
               this.temperature = response.data.temperature + "'C";
               this.placeName   = response.data.place_name
+              if (this.placeName === '') {
+                this.placeName = "Nobody Lives Here"
+              }
             },
             function(response) {
               this.temperature = response.data.errors;
