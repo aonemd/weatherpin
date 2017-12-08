@@ -1,15 +1,12 @@
 require 'openweathermap'
 
-class WeatherController < ApplicationController
+class WeatherController < ActionController::API
   def current
     owm_client.city(city: params[:city], country: params[:country])
 
     json = parse_owm_response(owm_client)
 
-    respond_to do |format|
-      format.html
-      format.json { render json: json, status: owm_client.status }
-    end
+    render json: json, status: owm_client.status
   end
 
   def random
@@ -18,10 +15,7 @@ class WeatherController < ApplicationController
 
     json = parse_owm_response(owm_client)
 
-    respond_to do |format|
-      format.html
-      format.json { render json: json, status: owm_client.status }
-    end
+    render json: json, status: owm_client.status
   end
 
   private
