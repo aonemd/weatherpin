@@ -1,24 +1,20 @@
-# README
+weatherpin
+---
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Get current weather instantly
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+- Install `ruby 2.4.1` and `yarn`
+- Make a copy of all the files that end in `.example` under `config/` and add your own settings
+- Run `bundle install` and `bin/yarn install` to get all the dependencies
+- Run the server `rails server`
+- Run the test suite using `rails test`
+- Run rubocop using `rubocop`
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Future Points/Todos
+- [] Get user location and weather automatically using Geolocation API
+- [] Add the ability to view weather for multiple locations
+- [] Change the weather in realtime
+- [] Setup and deploy the app on heroku
