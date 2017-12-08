@@ -18,3 +18,6 @@ Get current weather instantly
 - [] Add the ability to view weather for multiple locations
 - [] Change the weather in realtime
 - [] Setup and deploy the app on heroku
+
+## License
+See [LICENSE](https://github.com/yahmds/weatherpin/blob/master/LICENSE).
