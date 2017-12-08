@@ -7,4 +7,44 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+import Vue from 'vue/dist/vue.esm'
+import VueResource from 'vue-resource'
+
+Vue.use(VueResource)
+
+document.addEventListener('DOMContentLoaded', () => {
+  Vue.http.interceptors.push({
+    request: function (request) {
+      Vue.http.headers.common['X-CSRF-Token'] = $('[name="csrf-token"]').attr('content');
+      return request;
+    },
+    response: function (response) {
+      return response;
+    }
+  });
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      temperature: "Get Current Weather",
+      cityName: '',
+      countryCode: ''
+    },
+    methods: {
+      getWeather: function () {
+        this.$http.get('/current.json', { params: { city: this.cityName, country: this.countryCode } })
+          .then(
+            function(response) {
+              this.temperature = response.data.temperature + "'C";
+            },
+            function(response) {
+              this.temperature = response.data.errors;
+            }
+          )
+      },
+      randomWeather: function () {
+        console.log('hello')
+      }
+    }
+  })
+})
