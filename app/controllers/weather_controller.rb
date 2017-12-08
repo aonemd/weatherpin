@@ -6,7 +6,10 @@ class WeatherController < ApplicationController
     owm_client.city(city: params[:city], country: params[:country])
 
     json = if owm_client.successful?
-             { temperature: owm_client.body.fetch('main').fetch('temp') }
+             {
+               temperature: owm_client.body.fetch('main').fetch('temp'),
+               place_name: owm_client.body.fetch('name')
+             }
            else
              { errors: owm_client.message }
            end
@@ -24,7 +27,10 @@ class WeatherController < ApplicationController
     owm_client.geocode(lat: latitude, lon: longitude)
 
     json = if owm_client.successful?
-             { temperature: owm_client.body.fetch('main').fetch('temp') }
+             {
+               temperature: owm_client.body.fetch('main').fetch('temp'),
+               place_name: owm_client.body.fetch('name')
+             }
            else
              { errors: owm_client.message }
            end

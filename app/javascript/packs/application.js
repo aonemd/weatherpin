@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#app',
     data: {
       temperature: "Get Current Weather",
+      placeName: '',
       cityName: '',
       countryCode: ''
     },
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
           .then(
             function(response) {
               this.temperature = response.data.temperature + "'C";
+              this.placeName   = response.data.place_name
             },
             function(response) {
               this.temperature = response.data.errors;
@@ -47,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
           .then(
             function(response) {
               this.temperature = response.data.temperature + "'C";
+              this.placeName   = response.data.place_name
             },
             function(response) {
               this.temperature = response.data.errors;
