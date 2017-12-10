@@ -13,6 +13,7 @@ module OpenWeatherMap
       end
 
       def call(params: {})
+        ::Rails.logger.info "\nCalling Openweathermap API..\n"
         res = HTTPClient.get url, params.merge(APPID: @appid, units: @units)
         parse_respone(res.body)
         self
