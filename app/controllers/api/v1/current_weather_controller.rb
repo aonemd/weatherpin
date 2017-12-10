@@ -6,7 +6,11 @@ module Api
       include Owmable
 
       def show
-        owm_client.city(city: params[:city], country: params[:country])
+        if params[:query_type] == 'by_coord'
+          owm_client.geocode(lat: params[:lat], lon: params[:lon])
+        else
+          owm_client.city(city: params[:city], country: params[:country])
+        end
 
         json = parse_owm_response(owm_client)
 

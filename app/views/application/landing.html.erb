@@ -19,6 +19,7 @@
         <input type="text" placeholder="Country Code" v-model="countryCode">
       </div>
       <div class="col-12 text-center">
+        <button v-on:click="getWeatherByLocation">➤</button>
         <button v-on:click="getWeather">Get Weather</button>
         <button v-on:click="randomWeather">Feeling Lucky?</button>
       </div>

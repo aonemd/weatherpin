@@ -14,7 +14,7 @@ Get current weather instantly
 
 
 ## Future Points/Todos
-- [] Get user location and weather automatically using Geolocation API
+- [X] ~~Get user location and weather using Geolocation API~~
 - [] Add the ability to view weather for multiple locations
 - [] Change the weather in realtime
 - [] Setup and deploy the app on heroku

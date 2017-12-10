@@ -29,11 +29,35 @@ document.addEventListener('DOMContentLoaded', () => {
       temperature: "Weatherpin",
       placeName: '',
       cityName: '',
-      countryCode: ''
+      countryCode: '',
+      latitude: '',
+      longitude: ''
     },
     methods: {
+      getWeatherByLocation: function () {
+        var that = this;
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            that.latitude  = position.coords.latitude;
+            that.longitude = position.coords.longitude;
+            that.$http.get('/api/v1/current/by_coord.json',
+              {params: {lat: that.latitude, lon: that.longitude}})
+              .then(
+                function(response) {
+                  that.temperature = response.data.temperature + "'C";
+                  that.placeName   = response.data.place_name
+                  that.cityName    = ''
+                  that.countryCode = ''
+                },
+                function(response) {
+                  that.temperature = response.data.errors;
+                }
+              )
+          }
+        );
+      },
       getWeather: function () {
-        this.$http.get('/api/v1/current.json', { params: { city: this.cityName, country: this.countryCode } })
+        this.$http.get('/api/v1/current/by_city.json', { params: { city: this.cityName, country: this.countryCode } })
           .then(
             function(response) {
               this.temperature = response.data.temperature + "'C";
