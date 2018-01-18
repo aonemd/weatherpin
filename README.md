@@ -21,4 +21,4 @@ Get current weather instantly
 - [] Setup and deploy the app on heroku
 
 ## License
-See [LICENSE](https://github.com/yahmds/weatherpin/blob/master/LICENSE).
+See [LICENSE](https://github.com/aonemd/weatherpin/blob/master/LICENSE).
