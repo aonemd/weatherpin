@@ -5,5 +5,4 @@ class WeatherControllerTest < ActionDispatch::IntegrationTest
     get weather_show_url
     assert_response :success
   end
-
 end

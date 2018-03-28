@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'weather/show'
+
+  root to: 'weather#show'
+
   namespace :api, default: { format: :json } do
     namespace :v1 do
       get 'current/:query_type', to: 'current_weather#show', constraints: {
@@ -7,6 +11,4 @@ Rails.application.routes.draw do
       get 'random', to: 'random_weather#show'
     end
   end
-
-  root to: 'weather#show'
 end
