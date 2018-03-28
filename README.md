@@ -5,7 +5,7 @@ Get current weather instantly
 
 ## Installation
 
-- Install `ruby 2.4.1` and `yarn`
+- Install `ruby 2.5.0` and `yarn`
 - Make a copy of all the files that end in `.example` under `config/` and add your own settings
 - Run `bundle install` and `bin/yarn install` to get all the dependencies
 - Run `touch tmp/caching-dev.txt` to run the application in development with caching enabled
