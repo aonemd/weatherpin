@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'application#landing'
+  root to: 'weather#show'
 end
