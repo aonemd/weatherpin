@@ -77,7 +77,7 @@ GEM
     parallel (1.11.2)
     parser (2.4.0.0)
       ast (~> 2.2)
-    pg (1.0.0)
+    pg (0.21.0)
     powerpack (0.1.1)
     public_suffix (3.0.1)
     puma (3.11.0)
@@ -168,7 +168,7 @@ DEPENDENCIES
   byebug
   httpclient
   listen (>= 3.0.5, < 3.2)
-  pg (~> 1.0)
+  pg (~> 0.21)
   puma (~> 3.7)
   rails (~> 5.1.4)
   rubocop
