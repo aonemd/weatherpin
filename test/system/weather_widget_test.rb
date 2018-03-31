@@ -16,7 +16,6 @@ class WeatherWidgetTest < ApplicationSystemTestCase
     click_button 'Get Weather'
 
     assert_no_text 'h1', 'Weatherpin'
-    assert_selector 'small', text: 'Cairo'
   end
 
   test 'get random weather' do
