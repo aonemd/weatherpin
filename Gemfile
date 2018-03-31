@@ -17,6 +17,7 @@ gem 'webpacker'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'httpclient'
+gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 
 # Use Capistrano for deployment
