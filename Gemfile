@@ -17,6 +17,7 @@ gem 'webpacker'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'httpclient'
+gem 'jwt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
