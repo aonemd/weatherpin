@@ -10,24 +10,24 @@ module Api
                       password: '12345678')
       end
 
-      test "login successfully by email" do
-        post '/api/v1/login', params: { identity: @user.email,
+      test "sign_in successfully by email" do
+        post '/api/v1/sign_in', params: { identity: @user.email,
                                         password: '12345678' }
 
         assert_response :success
         assert_equal json_response.keys, ['token']
       end
 
-      test "login successfully by username" do
-        post '/api/v1/login', params: { identity: @user.username,
+      test "sign_in successfully by username" do
+        post '/api/v1/sign_in', params: { identity: @user.username,
                                         password: '12345678' }
 
         assert_response :success
         assert_equal json_response.keys, ['token']
       end
 
-      test "login unsuccessfully by email" do
-        post '/api/v1/login', params: { identity: @user.email,
+      test "sign_in unsuccessfully by email" do
+        post '/api/v1/sign_in', params: { identity: @user.email,
                                         password: 'wrong password' }
 
         assert_response :unauthorized

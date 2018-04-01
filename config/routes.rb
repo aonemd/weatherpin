@@ -9,7 +9,7 @@ Rails.application.routes.draw do
         query_type: /(by_city|by_coord)/
       }
       get 'random', to: 'random_weather#show'
-      post 'login', to: 'sessions#create'
+      post 'sign_in', to: 'sessions#create'
       post 'sign_up', to: 'registrations#create'
     end
   end
