@@ -1,4 +1,4 @@
-require 'jwt_encode_decode'
+require 'jwt_encoder_decoder'
 
 module Api
   module V1
@@ -7,7 +7,7 @@ module Api
         user = User.new(registration_params)
 
         if user.save
-          jwt = JWTEncodeDecode.encode({ user_id: user.id })
+          jwt = JWTEncoderDecoder.encode({ user_id: user.id })
           render json: { token: jwt }, status: :ok
         else
           render json: { errors: user.errors.full_messages }, status: :bad_request

@@ -1,4 +1,4 @@
-module JWTEncodeDecode
+module JWTEncoderDecoder
   def self.encode(payload, expires_in: 3.months.from_now)
     payload[:exp] = expires_in.to_i
 

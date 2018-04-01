@@ -1,4 +1,4 @@
-require 'jwt_encode_decode'
+require 'jwt_encoder_decoder'
 
 module Api
   module V1
@@ -7,7 +7,7 @@ module Api
         user = User.find_by_identity(login_params[:identity])
 
         if user && user.authenticate(login_params[:password])
-          jwt = JWTEncodeDecode.encode({ user_id: user.id })
+          jwt = JWTEncoderDecoder.encode({ user_id: user.id })
           render json: { token: jwt }, status: :ok
         else
           head :unauthorized
