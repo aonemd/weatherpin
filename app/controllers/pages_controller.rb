@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  def show
+  def weather
   end
 
   def login

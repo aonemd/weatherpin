@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'pages/show'
+  get 'pages/weather'
 
-  root to: 'pages#show'
+  root to: 'pages#weather'
 
   namespace :api, default: { format: :json } do
     namespace :v1 do
