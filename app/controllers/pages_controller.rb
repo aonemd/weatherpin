@@ -2,6 +2,6 @@ class PagesController < ApplicationController
   def weather
   end
 
-  def login
+  def authenticate
   end
 end

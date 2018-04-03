@@ -1,16 +1,12 @@
 <template>
   <div>
-    <weather-widget></weather-widget>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import weatherWidget from './components/weatherWidget.vue'
 
 export default {
-  components: {
-    'weather-widget': weatherWidget
-  }
 }
 </script>
 
