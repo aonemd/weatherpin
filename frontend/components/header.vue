@@ -16,14 +16,16 @@ import jwtDecoder from 'services/jwtDecoder';
 export default {
   data () {
     return {
-      authenticated: false
+      authenticated: false,
+      username: ''
     }
   },
   created () {
     let payload = jwtDecoder.payload();
-
-    this.authenticated = (payload['user_id'] != null);
-    this.username      = payload['username'];
+    if (payload != null) {
+      this.authenticated = (payload['user_id'] != null);
+      this.username      = payload['username'];
+    }
   }
 }
 </script>
