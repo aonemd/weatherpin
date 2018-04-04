@@ -17,6 +17,8 @@ gem 'webpacker'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'httpclient'
+gem 'bcrypt', '~> 3.1.7'
+gem 'jwt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -42,6 +44,8 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'poltergeist'
+  gem 'factory_bot'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

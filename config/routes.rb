@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'weather/show'
+  get 'pages/weather'
 
-  root to: 'weather#show'
+  root to: 'pages#weather'
 
   namespace :api, default: { format: :json } do
     namespace :v1 do
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
         query_type: /(by_city|by_coord)/
       }
       get 'random', to: 'random_weather#show'
+      post 'sign_in', to: 'sessions#create'
+      post 'sign_up', to: 'registrations#create'
     end
   end
 end

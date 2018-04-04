@@ -7,5 +7,22 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-import "components/index";
-import "components/weather-widget/weather-widget";
+import Vue from 'vue/dist/vue.esm'
+import VueResource from 'vue-resource';
+import VueRouter from 'vue-router';
+
+import App from 'App.vue';
+import Routes from 'routes.js';
+
+Vue.use(VueResource)
+Vue.use(VueRouter)
+
+const router = new VueRouter({
+  routes: Routes
+});
+
+new Vue({
+  el: '#app',
+  render: h => h(App),
+  router: router
+});
