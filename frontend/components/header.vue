@@ -5,6 +5,7 @@
       <li v-show="!authenticated"><router-link to="/sign-in" exact>Sign In</router-link></li>
       <li v-show="!authenticated"><router-link to="/sign-up" exact>Sign Up</router-link></li>
       <li v-show="authenticated">{{ username }}</li>
+      <li v-show="authenticated"><router-link to="/sign-out" exact>Sign Out</router-link></li>
     </ul>
   </nav>
 </template>
