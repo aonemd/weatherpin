@@ -7,7 +7,7 @@ module Api
         user = User.find_by_identity(login_params[:identity])
 
         if user && user.authenticate(login_params[:password])
-          jwt = JWTEncoderDecoder.encode({ user_id: user.id })
+          jwt = JWTEncoderDecoder.encode({ user_id: user.id, username: user.username, email: user.email })
           render json: { token: jwt }, status: :ok
         else
           head :unauthorized
