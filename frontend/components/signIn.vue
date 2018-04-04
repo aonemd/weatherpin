@@ -32,20 +32,19 @@ export default {
     return {
       identity: '',
       password: '',
-      token: ''
+      errors: []
     }
   },
   methods: {
     submit: function () {
       this.$http.post('/api/v1/sign_in.json', { identity: this.identity, password: this.password })
-        .then(
+        .then(function(response) {
+          localStorage.setItem('token', response.body.token);
+          this.$router.push('/');
+        },
           function(response) {
-            token = response.data.token;
-            console.log(token)
-            // TODO
-          },
-          function(response) {
-            // TODO
+            this.errors = response.body.errors;
+            console.log(this.errors)
           }
         )
     }
