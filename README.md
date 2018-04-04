@@ -18,7 +18,8 @@ Get current weather instantly
 - [X] ~~Get user location and weather using Geolocation API~~
 - [] Add the ability to view weather for multiple locations
 - [] Change the weather in realtime
-- [] Setup and deploy the app on heroku
+- [X] Setup and deploy the app on heroku
+- [] Add the ability for authenticated users to post their weather
 
 ## License
 See [LICENSE](https://github.com/aonemd/weatherpin/blob/master/LICENSE).
