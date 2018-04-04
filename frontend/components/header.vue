@@ -2,14 +2,27 @@
   <nav>
     <ul>
       <li><router-link to="/" exact>Home</router-link></li>
-      <li><router-link to="/sign-in" exact>Sign In</router-link></li>
-      <li><router-link to="/sign-up" exact>Sign Up</router-link></li>
+      <li v-show="!authenticated"><router-link to="/sign-in" exact>Sign In</router-link></li>
+      <li v-show="!authenticated"><router-link to="/sign-up" exact>Sign Up</router-link></li>
     </ul>
   </nav>
 </template>
 
 <script>
-export default {}
+import jwtDecoder from 'services/jwtDecoder';
+
+export default {
+  data () {
+    return {
+      authenticated: false
+    }
+  },
+  created () {
+    let payload = jwtDecoder.payload();
+
+    this.authenticated = (payload['user_id'] != null);
+  }
+}
 </script>
 
 <style>
