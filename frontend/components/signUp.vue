@@ -1,28 +1,17 @@
 <template>
-  <div id="sign-up">
-    <div id="sign-up__main-la">
-      <div class="row">
-        <div class="center">
-          <div class="col-12 text-center">
-            <h1>
-              Sign Up
-            </h1>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div>
+    <h1>
+      Sign Up
+    </h1>
 
-    <div class="sign-up__controls">
-      <div class="row">
-        <div class="center">
-          <div class="col-12 text-center">
-            <input type="text" placeholder="Email" id="sign-up__email" v-model="email">
-            <input type="text" placeholder="Username" id="sign-up__username" v-model="username">
-            <input type="password" placeholder="Password" id="sign-up__password" v-model="password">
-            <button id="sign-up__button" v-on:click="submit">Sign up</button>
-          </div>
-        </div>
-      </div>
+    <div id="sign-up__input-group">
+      <input type="text" placeholder="Email" id="sign-up__email" v-model="email">
+      <br>
+      <input type="text" placeholder="Username" id="sign-up__username" v-model="username">
+      <br>
+      <input type="password" placeholder="Password" id="sign-up__password" v-model="password">
+      <br>
+      <button id="sign-up__button" v-on:click="submit">Sign up</button>
     </div>
   </div>
 </template>
@@ -56,10 +45,7 @@ export default {
 </script>
 
 <style scoped>
-#sign-up__main-label {
-  padding-top: 100px;
-}
-.sign-up__controls input {
-  margin-right: 10px;
+#sign-up__input-group input, button {
+  margin-bottom: 15px;
 }
 </style>

@@ -1,27 +1,15 @@
 <template>
-  <div id="sign-in">
-    <div id="sign-in__main-la">
-      <div class="row">
-        <div class="center">
-          <div class="col-12 text-center">
-            <h1>
-              Sign In
-            </h1>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div>
+    <h1>
+      Sign In
+    </h1>
 
-    <div class="sign-in__controls">
-      <div class="row">
-        <div class="center">
-          <div class="col-12 text-center">
-            <input type="text" placeholder="Email or Username" id="sign-in__identity" v-model="identity">
-            <input type="password" placeholder="Password" id="sign-in__password" v-model="password">
-            <button id="sign-in__button" v-on:click="submit">Sign in</button>
-          </div>
-        </div>
-      </div>
+    <div id="sign-in__input-group">
+      <input type="text" placeholder="Email or Username" v-model="identity">
+      <br>
+      <input type="password" placeholder="Password" v-model="password">
+      <br>
+      <button v-on:click="submit">Sign in</button>
     </div>
   </div>
 </template>
@@ -54,10 +42,7 @@ export default {
 </script>
 
 <style scoped>
-#sign-in__main-label {
-  padding-top: 100px;
-}
-.sign-in__controls input {
-  margin-right: 10px;
+#sign-in__input-group input, button {
+  margin-bottom: 15px;
 }
 </style>

@@ -1,30 +1,19 @@
 <template>
-  <div id="weather-widget">
-    <div id="weather-widget__main-label">
-      <div class="row">
-        <div class="center">
-          <div class="col-12 text-center">
-            <h1>
-              {{temperature}}
-              <small>{{placeName}}</small>
-            </h1>
-          </div>
-        </div>
-      </div>
+  <div>
+    <h1>
+      {{temperature}}
+      <small>{{placeName}}</small>
+    </h1>
+
+    <div id="weather-widget__input-group">
+      <input type="text" placeholder="City" v-model="cityName">
+      <input type="text" placeholder="Country Code" v-model="countryCode">
     </div>
 
-    <div class="row">
-      <div class="center">
-        <div class="col-12 text-center">
-          <input type="text" placeholder="City"         id="weather-widget__control" v-model="cityName">
-          <input type="text" placeholder="Country Code" id="weather-widget__control" v-model="countryCode">
-        </div>
-        <div class="col-12 text-center">
-          <button id="weather-widget__control" v-on:click="getWeatherByLocation">➤</button>
-          <button id="weather-widget__control" v-on:click="getWeather">Get Weather</button>
-          <button id="weather-widget__control" v-on:click="randomWeather">Feeling Lucky?</button>
-        </div>
-      </div>
+    <div id="weather-widget__button-group">
+      <button v-on:click="getWeatherByLocation">➤</button>
+      <button v-on:click="getWeather">Get Weather</button>
+      <button v-on:click="randomWeather">Feeling Lucky?</button>
     </div>
   </div>
 </template>
@@ -98,12 +87,21 @@ export default {
 }
 </script>
 
-<style>
-#weather-widget__main-label {
-  padding-top: 100px;
+<style scoped>
+#weather-widget__input-group {
+  display: inline-block;
 }
 
-#weather-widget__control {
+#weather-widget__input-group input {
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+#weather-widget__button-group {
+  display: block;
+}
+
+#weather-widget__button-group button {
   margin-right: 10px;
 }
 </style>

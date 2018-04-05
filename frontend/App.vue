@@ -1,7 +1,9 @@
 <template>
   <div>
     <app-header></app-header>
-    <router-view></router-view>
+    <div id="container">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -21,4 +23,9 @@ export default {
 @import "stylesheets/grid.css";
 @import "stylesheets/typography.css";
 @import "stylesheets/utils.css";
+
+#container {
+  margin: 100px auto;
+  text-align: center;
+}
 </style>
