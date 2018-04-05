@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       get 'random', to: 'random_weather#show'
       post 'sign_in', to: 'sessions#create'
       post 'sign_up', to: 'registrations#create'
+
+      resources :posts, only: [:index, :create]
     end
   end
 end
