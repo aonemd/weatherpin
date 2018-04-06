@@ -2,7 +2,9 @@ module Api
   module V1
     class PostsController < SecuredController
       def index
-        posts = Post.all
+        posts = Post.includes(:user).order(created_at: :desc).map do |post|
+          PostDecorator.new(post).decorate
+        end
 
         render json: { posts: posts }
       end
