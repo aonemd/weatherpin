@@ -1,6 +1,6 @@
 module Api
   module V1
-    class PostsController < ActionController::API
+    class PostsController < SecuredController
       def index
         posts = Post.all
 
@@ -8,7 +8,7 @@ module Api
       end
 
       def create
-        post = Post.new(post_params)
+        post = current_user.posts.new(post_params)
 
         if post.save
           render json: { post: post }
@@ -20,7 +20,7 @@ module Api
       private
 
       def post_params
-        params.require(:post).permit(:temperature, :location_name, :units, :user_id)
+        params.require(:post).permit(:temperature, :location_name, :units)
       end
     end
   end
