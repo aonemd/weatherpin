@@ -1,15 +1,10 @@
 require 'test_helper'
-require 'jwt_encoder_decoder'
 
 module Api
   module V1
     class PostsControllerTest < ActionDispatch::IntegrationTest
       def setup
-        @user = create(:user,
-                      email: "#{Faker::Internet.user_name}@random.com",
-                      username: Faker::Internet.user_name,
-                      password: '12345678')
-        @token = JWTEncoderDecoder.encode({ user_id: @user.id, username: @user.username, email: @user.email })
+        @token = authenticated_token
       end
 
       test "#index" do
