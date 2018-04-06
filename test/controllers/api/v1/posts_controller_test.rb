@@ -17,7 +17,7 @@ module Api
 
       test "#create successfully" do
         post '/api/v1/posts', params: {
-          post: { temperature: 15, location_name: 'New York', unit: 'faherenheit' }
+          post: { temperature: 15, location_name: 'New York', unit: 'fahrenheit' }
         }, headers: { 'Authorization': "Bearer #{@token}" }
 
         assert_response :success
@@ -27,7 +27,7 @@ module Api
 
       test "#create unsuccessfully" do
         post '/api/v1/posts', params: {
-          post: { temperature: nil, location_name: 'New York', unit: 'faherenheit' }
+          post: { temperature: nil, location_name: 'New York', unit: 'fahrenheit' }
         }, headers: { 'Authorization': "Bearer #{@token}" }
 
         assert_response :bad_request

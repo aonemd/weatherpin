@@ -20,7 +20,7 @@ module Api
       private
 
       def post_params
-        params.require(:post).permit(:temperature, :location_name, :units)
+        params.require(:post).permit(:temperature, :location_name, :unit)
       end
     end
   end
