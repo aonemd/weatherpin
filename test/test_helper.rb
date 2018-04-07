@@ -1,6 +1,7 @@
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'webmock/minitest'
+require 'mocha/minitest'
 
 require 'factory_bot'
 FactoryBot.find_definitions
@@ -17,5 +18,6 @@ end
 module ActionDispatch
   class IntegrationTest
     include JSONResponse
+    include AuthenticatedToken
   end
 end

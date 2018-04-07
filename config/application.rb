@@ -34,5 +34,7 @@ module Weatherpin
       g.helper          false
       g.channel         assets: false
     end
+
+    config.autoload_paths << Rails.root.join('app/decorators')
   end
 end

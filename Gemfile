@@ -46,6 +46,7 @@ group :test do
   gem 'poltergeist'
   gem 'factory_bot'
   gem 'faker'
+  gem 'mocha'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
