@@ -13,7 +13,7 @@ module Api
         post = current_user.posts.new(post_params)
 
         if post.save
-          render json: { post: post }
+          render json: { post: PostDecorator.new(post).decorate }
         else
           render json: { errors: post.errors.full_messages }, status: :bad_request
         end

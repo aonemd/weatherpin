@@ -1,6 +1,6 @@
 <template>
   <div>
-    <weather-widget class="separator"></weather-widget>
+    <weather-widget class="separator" v-bind:authenticated="authenticated"></weather-widget>
     <posts v-show="authenticated" v-bind:authenticated="authenticated"></posts>
   </div>
 </template>

@@ -15,12 +15,16 @@
       <button v-on:click="getWeather">Get Weather</button>
       <button v-on:click="randomWeather">Feeling Lucky?</button>
     </div>
+    <br>
+    <button v-show="authenticated" v-on:click="addPost">Share</button>
   </div>
 </template>
 
 <script>
+import { bus } from '../packs/application';
 
 export default {
+  props: ['authenticated'],
   data () {
     return {
       temperature: "Weatherpin",
@@ -82,6 +86,15 @@ export default {
             this.temperature = response.data.errors;
           }
         )
+    },
+    addPost: function () {
+      let token = localStorage.getItem('token');
+      this.$http.post('/api/v1/posts.json',
+        { post: { temperature: this.temperature } },
+        { headers: { 'Authorization': "Bearer " + token  } })
+        .then(function(response) {
+          bus.$emit('addPost', response.body.post);
+        });
     }
   }
 }

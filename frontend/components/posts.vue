@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { bus } from '../packs/application';
+
 export default {
   props: ['authenticated'],
   data () {
@@ -27,6 +29,10 @@ export default {
         .then(function(response) {
           this.posts = response.body.posts;
         });
+
+      bus.$on('addPost', (post) => {
+        this.posts.unshift(post);
+      });
     }
   }
 }
