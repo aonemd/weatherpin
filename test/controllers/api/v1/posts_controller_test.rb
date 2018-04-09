@@ -22,7 +22,6 @@ module Api
 
         assert_response :success
         assert_equal json_response.keys, ['post']
-        assert_equal json_response['post']['id'], Post.last.id
       end
 
       test "#create unsuccessfully" do
