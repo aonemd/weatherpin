@@ -1,4 +1,4 @@
-module Owmable
+module OWMLoader
   extend ActiveSupport::Concern
 
   def owm_client

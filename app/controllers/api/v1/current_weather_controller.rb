@@ -3,7 +3,7 @@ require 'openweathermap'
 module Api
   module V1
     class CurrentWeatherController < ActionController::API
-      include Owmable
+      include OWMLoader
 
       def show
         json = if params[:query_type] == 'by_coord'

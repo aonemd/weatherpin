@@ -3,7 +3,7 @@ require 'openweathermap'
 module Api
   module V1
     class RandomWeatherController < ActionController::API
-      include Owmable
+      include OWMLoader
 
       def show
         grg_service = GenerateRandomGeolocation.new.call
