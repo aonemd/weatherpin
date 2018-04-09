@@ -2,7 +2,7 @@ require 'jwt_encoder_decoder'
 
 module Api
   module V1
-    class SessionsController < ActionController::API
+    class SessionsController < BaseController
       def create
         user = User.find_by_identity(login_params[:identity])
 

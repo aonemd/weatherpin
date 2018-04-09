@@ -2,7 +2,7 @@ require 'jwt_encoder_decoder'
 
 module Api
   module V1
-    class RegistrationsController < ActionController::API
+    class RegistrationsController < BaseController
       def create
         user = User.new(registration_params)
 

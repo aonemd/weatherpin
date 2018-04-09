@@ -2,7 +2,7 @@ require 'openweathermap'
 
 module Api
   module V1
-    class CurrentWeatherController < ActionController::API
+    class CurrentWeatherController < BaseController
       include OWMLoader
 
       def show

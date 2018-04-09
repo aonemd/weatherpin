@@ -2,7 +2,7 @@ require 'openweathermap'
 
 module Api
   module V1
-    class RandomWeatherController < ActionController::API
+    class RandomWeatherController < BaseController
       include OWMLoader
 
       def show

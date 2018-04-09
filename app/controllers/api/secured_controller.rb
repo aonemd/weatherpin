@@ -1,7 +1,7 @@
 require 'jwt_encoder_decoder'
 
 module Api
-  class SecuredController < ActionController::API
+  class SecuredController < BaseController
     before_action :authenticate_user
 
     protected
