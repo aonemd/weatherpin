@@ -5,7 +5,7 @@
         <p>@{{ post.username }} . {{ post.created_at }}</p>
         <h1>
           {{ post.temperature }}
-          <small>{{ post.location_name }}</small>
+          <small>{{ post.location }}</small>
         </h1>
       </div>
     </div>

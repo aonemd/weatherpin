@@ -2,7 +2,7 @@
   <div>
     <h1>
       {{temperature}}
-      <small>{{placeName}}</small>
+      <small>{{location}}</small>
     </h1>
 
     <div id="weather-widget__input-group">
@@ -28,7 +28,7 @@ export default {
   data () {
     return {
       temperature: "Weatherpin",
-      placeName: '',
+      location: '',
       cityName: '',
       countryCode: '',
       latitude: '',
@@ -47,7 +47,7 @@ export default {
             .then(
               function(response) {
                 that.temperature = response.data.temperature + "'C";
-                that.placeName   = response.data.place_name
+                that.location   = response.data.place_name
                 that.cityName    = ''
                 that.countryCode = ''
               },
@@ -63,7 +63,7 @@ export default {
         .then(
           function(response) {
             this.temperature = response.data.temperature + "'C";
-            this.placeName   = response.data.place_name
+            this.location   = response.data.place_name
             this.cityName    = ''
             this.countryCode = ''
           },
@@ -77,9 +77,9 @@ export default {
         .then(
           function(response) {
             this.temperature = response.data.temperature + "'C";
-            this.placeName   = response.data.place_name
-            if (this.placeName === '') {
-              this.placeName = "Nobody Lives Here"
+            this.location   = response.data.place_name
+            if (this.location === '') {
+              this.location = "Nobody Lives Here"
             }
           },
           function(response) {
@@ -90,7 +90,7 @@ export default {
     addPost: function () {
       let token = localStorage.getItem('token');
       this.$http.post('/api/v1/posts.json',
-        { post: { temperature: this.temperature } },
+        { post: { temperature: this.temperature, location_name: this.location } },
         { headers: { 'Authorization': "Bearer " + token  } })
         .then(function(response) {
           bus.$emit('addPost', response.body.post);
