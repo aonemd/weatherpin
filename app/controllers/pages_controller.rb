@@ -1,7 +1,4 @@
 class PagesController < ApplicationController
-  def weather
-  end
-
-  def authenticate
+  def index
   end
 end
