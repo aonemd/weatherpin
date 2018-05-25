@@ -18,8 +18,8 @@ class AuthenticationTest < ApplicationSystemTestCase
 
     visit '/#/sign-in'
 
-    fill_in 'sign-in__identity',  with: user.email
-    fill_in 'sign-in__password', with: '12345678'
+    fill_in 'Email or Username',  with: user.email
+    fill_in 'Password', with: '12345678'
     click_button 'Sign in'
 
     assert_selector 'li', user.username
@@ -31,8 +31,8 @@ class AuthenticationTest < ApplicationSystemTestCase
 
     visit '/#/sign-in'
 
-    fill_in 'sign-in__identity',  with: user.username
-    fill_in 'sign-in__password', with: '12345678'
+    fill_in 'Email or Username',  with: user.username
+    fill_in 'Password', with: '12345678'
     click_button 'Sign in'
 
     assert_selector 'li', user.username
