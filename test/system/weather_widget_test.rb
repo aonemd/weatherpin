@@ -2,14 +2,14 @@ require "application_system_test_case"
 
 class WeatherWidgetTest < ApplicationSystemTestCase
   test 'widget exists' do
-    visit pages_weather_path
+    visit root_url
 
     has_css? 'weather-widget'
     assert_selector 'h1', 'Weatherpin'
   end
 
   test 'get weather' do
-    visit pages_weather_path
+    visit root_url
 
     fill_in 'City', with: 'Cairo'
     fill_in 'Country Code', with: 'Eg'
@@ -19,7 +19,7 @@ class WeatherWidgetTest < ApplicationSystemTestCase
   end
 
   test 'get random weather' do
-    visit pages_weather_path
+    visit root_url
 
     click_button 'Feeling Lucky?'
 
