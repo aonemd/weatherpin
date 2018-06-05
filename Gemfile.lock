@@ -60,7 +60,6 @@ GEM
     chromedriver-helper (1.2.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
-    cliver (0.3.2)
     concurrent-ruby (1.0.5)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
@@ -103,10 +102,6 @@ GEM
     parser (2.4.0.0)
       ast (~> 2.2)
     pg (0.21.0)
-    poltergeist (1.17.0)
-      capybara (~> 2.1)
-      cliver (~> 0.3.1)
-      websocket-driver (>= 0.2.0)
     powerpack (0.1.1)
     public_suffix (3.0.1)
     puma (3.11.0)
@@ -211,7 +206,6 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   mocha
   pg (~> 0.21)
-  poltergeist
   puma (~> 3.7)
   rails (~> 5.1.4)
   rubocop

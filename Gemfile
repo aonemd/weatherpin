@@ -43,7 +43,6 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
-  gem 'poltergeist'
   gem 'factory_bot'
   gem 'faker'
   gem 'mocha'
