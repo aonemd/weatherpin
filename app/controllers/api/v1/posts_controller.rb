@@ -3,7 +3,7 @@ module Api
     class PostsController < SecuredController
       def index
         posts =
-          BaseDecorator.decorate_collection(Post.includes(:user).order(created_at: :desc))
+          PostDecorator.decorate_collection(Post.includes(:user).order(created_at: :desc))
 
         render json: { posts: posts }
       end
